@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/2.ajax-jquery.js"></script>
+
+    <script>
+        $(function(){
+            $("#btn").click(function(){
+                var uname = $("#username").val();
+                var pw = $("#password").val();
+                ajax({
+                    type:"get",
+                    dataType:"text",
+                    url:"http://localhost:63342/ajax/login.php",
+                    data : {
+                        username:uname,
+                        password:pw,
+                    },
+                    success:function(data){
+                        if(data == "1"){
+                            $("#showInfo").html("登录成功")
+                        }else if(data == "2"){
+                            $("#showInfo").html("用户名或者密码错误")
+                        }
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+<div>
+    <label for="">用户名</label>
+    <input type="text" name="username" id="username">
+    <label for="">密码</label>
+    <input type="password" id="password" name="password">
+    <input type="button" value="登录" id="btn">
+    <span id="showInfo"></span>
+</div>
+</body>
+</html>

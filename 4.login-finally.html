@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/ajax-finally.js"></script>
+    <script>
+        window.onload = function(){
+            var btn = document.getElementById("btn");
+            btn.onclick = function(){
+                var uname = document.getElementById("username");
+                var pw = document.getElementById("password");
+                var param = "？"+"username"+"="+uname+"&"+"password"+"="+pw;
+                ajax(param);
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    <label for="">用户名</label>
+    <input type="text" name="username" id="username">
+    <label for="">密码</label>
+    <input type="password" id="password" name="password">
+    <input type="button" value="登录" id="btn">
+    <span id="showInfo"></span>
+</div>
+</body>
+</html>

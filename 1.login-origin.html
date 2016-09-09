@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--需求，点击按钮的时候，用户名和密码已经存在就登录成功，否则登录失败-->
+    <script>
+        window.onload = function(){
+            var btn = document.getElementById('btn');
+            btn.onclick = function(){
+                var uname = document.getElementById("username").value;
+                var pw = document.getElementById("password").value;
+                var param = "?username="+uname+"&"+"password="+pw;
+                ajax(param);
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    <label for="">用户名</label>
+    <input type="text" name="username" id="username">
+    <label for="">密码</label>
+    <input type="password" id="password" name="password">
+    <input type="button" value="登录" id="btn">
+    <span id="showInfo"></span>
+</div>
+<script src="./js/login.js"></script>
+</body>
+</html>
